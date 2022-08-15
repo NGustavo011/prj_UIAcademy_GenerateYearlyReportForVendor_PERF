@@ -33,6 +33,7 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -62,9 +63,11 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="376,496" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -81,9 +84,10 @@
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;in_System1Credential&quot;).ToString" />
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolderPath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueFolder&quot;).ToString" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_Config(&quot;in_ReportsPath&quot;).ToString]" />
   </Sequence>
 </Activity>
